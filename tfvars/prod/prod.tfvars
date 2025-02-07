@@ -1,2 +1,2 @@
 environment = "prod"
-instances = ["mysql-prod","backend-prod","frontend-prod"]
+instances = ["mysql","backend","frontend"]

@@ -1,4 +1,4 @@
-resource "aws_instance" "this" {
+resource "aws_instance" "ec2" {
 
   count = length(var.instances)
 
@@ -6,7 +6,7 @@ resource "aws_instance" "this" {
   vpc_security_group_ids  = [aws_security_group.allow_tls.id]
   instance_type           = "t3.micro"
 tags = {
-    Name = "${var.project}-${var.instances[count.index]}"
+    Name = "${var.project}-${var.environment}-${var.instances[count.index]}"
   }
 
 }
